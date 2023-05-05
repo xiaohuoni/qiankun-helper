@@ -23,9 +23,14 @@
   ],
   "scripts": {
     "build": "father build",
+    "start:rm": "cd examples/react-master && pnpm dev",
+    "start:rs": "cd examples/react-slave && pnpm dev",
+    "start:rs2": "cd examples/react-slave-2 && pnpm dev",
+    "start:demos": "concurrently \"npm:start:r*\"",
     "format": "prettier --cache --write ."
   },
   "devDependencies": {
+    "concurrently": "^8.0.1",
     "father": "^4.1.9",
     "prettier": "^2.8.4",
     "prettier-plugin-organize-imports": "^3.2.2",
